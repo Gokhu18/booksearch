@@ -1,5 +1,5 @@
 # booksearch 0.1
-A search and price comparison Beautiful Soup-based webscraper for book shopping across multiple stores - mostly independents, but a couple larger outlets as well, just for comparison's sake.
+A search-price Beautiful Soup-based webscraper for comparison shopping across multiple bookstores - mostly independents, but a couple larger outlets as well, just for comparison's sake.
 
 Updates TK:
 
