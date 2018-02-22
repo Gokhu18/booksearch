@@ -1,4 +1,4 @@
-# booksearch 0.1 developed by matthew lyons
+# booksearch developed by matthew lyons
 
 from bs4 import BeautifulSoup
 import requests
