@@ -16,7 +16,6 @@ isbn = re.sub('[^0-9]','', info_a)[:-4]
 
 def cap_data():
     response = requests.get("https://www.barnesandnoble.com/w/?ean=" + isbn)
-    soup = BeautifulSoup(response.text, "html.parser")
     results = soup.find('header', {'id': 'prodSummary-header'})
     results2 = results.find('h1', {'itemprop': 'name'})
     results3 = results.find('span', {'itemprop': 'author'})
@@ -27,7 +26,6 @@ def cap_data():
 
 def bn():
     response = requests.get("https://www.barnesandnoble.com/w/?ean=" + isbn)
-    soup = BeautifulSoup(response.text, "html.parser")
     results = soup.find('div', {'id': 'commerce-zone'})
     results2 = results.find('div', {'class': 'hidden'})
     results3 = results2.find('span', {'itemprop': 'price'})
@@ -37,7 +35,6 @@ def bn():
 
 def strand():
     response = requests.get("http://www.strandbooks.com/index.cfm?fuseaction=search.results&searchString=" + isbn)
-    soup = BeautifulSoup(response.text, "html.parser")
     results = soup.find_all('div', {'class': 'product-summary'})
     
     for result in results:
@@ -45,7 +42,6 @@ def strand():
 
 def bam():
     response = requests.get("http://www.booksamillion.com/search?query=" + isbn + "&filter=product_type%3Abooks")
-    soup = BeautifulSoup(response.text, "html.parser")
     results = soup.find_all('div', {'class': 'meta'})
 
     print()
@@ -60,7 +56,6 @@ bookpeople = "http://www.bookpeople.com/book/" + isbn
 
 def multisearch(store):
     response = requests.get(store)
-    soup = BeautifulSoup(response.text, "html.parser")
     results = soup.find_all('div', {'class': 'abaproduct-page-details'})
 
     for result in results:
